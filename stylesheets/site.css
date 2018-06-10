@@ -8,3 +8,37 @@ h1{
     border-radius: 10px;
     color: brown;
 }
+
+#gameBoard{
+    display:flex;
+}
+
+#player1Board, #player2Board, #gameButtons{
+    background-color: beige;
+    padding: 1em;
+    border: 2px solid black;
+    margin: .75em;
+}
+
+#buttons{
+    display: flex;
+    justify-content: center;
+}
+
+div#buttons>button[type=button]{
+    font-size: 1.25em;
+    padding: .5;
+    margin: 2px;
+    cursor: pointer;
+}
+
+@media only screen and (max-width: 768px){
+    
+    #gameBoard{
+        flex-direction: column;
+    }
+
+    h1{
+        display: none;
+    }
+}
