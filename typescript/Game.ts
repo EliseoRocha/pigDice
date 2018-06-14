@@ -24,8 +24,12 @@ class Game{
             return this.gameTotalPlayer2;
         else
             return null;
-    }
+    } 
 
+    /**
+     * Gets a random number between 1 and 6
+     * Returns a random roll value
+     */
     rollDie():number{
         let roll = getRandomIntegerValue(1,6);
         if(roll == 1){
@@ -56,14 +60,19 @@ class Game{
             this.currentPlayer = 1;
         }
         */
-    }
+    }  
 }
 
 /**
  * Gets an integer random value
- * @param minValue The inclusive min value
- * @param maxValue The inclusive max value
+ * @param minValue The inclusive min value integer
+ * @param maxValue The inclusive max value integer
  */
 function getRandomIntegerValue(minValue:number, maxValue:number):number{
-    return Math.floor(Math.random() * 10 + 1);
+    //truncates decimal value
+    //Math.trunc works but not usable in IE
+    minValue = Math.floor(minValue);
+    maxValue = Math.floor(maxValue);
+
+    return Math.floor(Math.random() * (maxValue - minValue + 1) + minValue);
 }
